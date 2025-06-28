@@ -24,3 +24,10 @@ I guess this is a great opportunity to make an Experiment.
 
 How big is the Bundle Size and performance of bundling the Project using Barrel Files?
 
+Client-side bundling built in 3.40s
+Server-side (SSR + Nitro) bundling built in:
+~1.3s (vite SSR)
+~3s (Nitro server)
+
+Total size: 5.8 MB (1.33 MB gzip)
+
