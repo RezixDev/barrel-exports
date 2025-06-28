@@ -33,3 +33,26 @@ Server-side (SSR + Nitro) bundling built in:
 
 Total size: 5.8 MB (1.33 MB gzip)
 
+So i decided to refactor my Project. What is the outcome?
+
+https://github.com/RezixDev/Gym-Tracker/commit/b8225519ba06e76091c7aba39c034db123e0c119
+
+And what are the Times be after?
+
+| Build Phase   | With Barrel Imports | Without Barrel Imports | Difference  |
+| ------------- | ------------------- | ---------------------- | ----------- |
+| Client (Vite) | 3.40s               | 3.19s                  | **-0.21s**  |
+| SSR (Vite)    | 1.29s               | 1.21s                  | **-0.08s**  |
+| Nitro (Node)  | \~3s                | \~3s                   | ≈ 0s        |
+| **Total**     | \~7.7s              | \~7.4s                 | **≈ -0.3s** |
+
+Number of transformed modules:
+
+Before: 2412
+
+After: 2395 → 17 fewer modules (possibly due to tree-shaking + no barrel re-exports)
+
+So i guess it's worth it. 
+We have way fewer files, the build time is a little bit faster and the Project is cleaner. And it was only one feature! Imagine what could the outcomes be if we had an bigger Project!
+
+
